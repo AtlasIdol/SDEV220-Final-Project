@@ -5,6 +5,8 @@ Author: Timothy Gist
 and did not return control to the calling program.  I fixed that by adding the
 .destroy() method and inserting the return keyword in the successful login blocks.
 12/8/2023: Added database functionality to the login module.
+12/11/2023: De-conflicted functionality that was creating a new login screen when the login was successful.
+The problem was a wrong function call on button click.
 """
 
 def login():
