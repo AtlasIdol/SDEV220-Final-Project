@@ -1,0 +1,75 @@
+***** Sponsor Manager Version 1.01 *****
+
+This file is meant to provide specific instructions and documentation
+for working with the Sponsor Manager program.
+
+Initially there will be a login screen.  Enter your credentials: user-name and password.
+If either of these are not found in the database, the program will ask you to try again.
+Upon successful login, the main screen will be displayed.
+
+Menu bar options include:
+Team Members:  This option will allow you to see the team members that contributed to the project
+in a message box ... click the 'OK' button to return to the program.
+
+About:  This option will allow you to see this file in a new window ... click the 'X' in the
+upper right corner of the window to return to the program.
+
+Exit:  This option allows you to exit the program ... you will be prompted by a message box to
+confirm that you really want to quit the program ... clicking 'YES' ends the program.
+
+Once into the main program, you will see buttons along the left side of the window
+and an output box adjacent and to the right of the buttons.
+The buttons contain the functionality for the program so far.  The main functionality
+is as follows:
+
+Sponsors: This button will execute the SQL statement 'SELECT * FROM sponsors'.
+The resulting output will be sent to the output box.  The output should be
+all fields from the Sponsors table.
+
+Membership: This button will execute the SQL statement 'SELECT * FROM Membership_level'.
+The resulting output will be sent to the output box.  The output should be
+all fields from the Membership_level table.
+
+Membership Level: This button will execute the SQL statement
+'SELECT Membership_level FROM Membership_level'.
+The resulting output will be sent to the output box.  The output should be only the
+Membership_level field from the Membership_level table.
+
+Sponsor Names: This button will execute the SQL statement 'SELECT Sponsor_Name FROM sponsors'.
+The resulting output will be sent to the output box.  The output should be
+only the Sponsor_name field from the Sponsors table.
+
+Payment Received: This button will execute the SQL statement
+'SELECT * FROM sponsors WHERE Payment_Received = "Yes"'.
+The resulting output will be sent to the output box.  The output should be
+the entire record from the Sponsors table if that sponsor has paid in full.
+
+Payment Not Received: This button will execute the SQL statement
+'SELECT * FROM sponsors WHERE Payment_Received = "No"'.
+The resulting output will be sent to the output box.  The output should be
+the entire record from the Sponsors table if that sponsor has not paid in full.
+
+The following buttons are disabled at this time.  The functionality described below
+will be added in the next update to the program.
+
+Sponsor Level: This button will execute the SQL statement
+'SELECT Sponsors.Sponsor_Name, Membership_level.Membership_level
+FROM Sponsors JOIN Sponsors.Membership_ID ON Membership_level.Membership_ID'.
+The resulting output will be sent to the output box.  The output should be
+the Sponsor Name and Membership Level for each sponsor in the Sponsors table.
+
+Membership Cost: This button will execute the SQL statement
+'SELECT Sponsors.Sponsor_Name, Membership_level.Membership_cost
+FROM Sponsors JOIN Membership_level.Membership_ID ON Sponsors.Membership_id'.
+The resulting output will be sent to the output box.  The output should be
+the Sponsor Name and Membership Cost for each sponsor in the Sponsors table.
+
+Membership Renewal: This button will execute the SQL statement
+'SELECT Sponsors.Sponsor_Name, Membership_level.Membership_renewal, Membership_level.Membership_cost
+FROM Sponsors JOIN Membership_level.Membership_ID ON Sponsors.Membership_id'.
+The resulting output will be sent to the output box.  The output should be
+the Sponsor Name, Membership Renewal frequency, and Membership Cost
+for each sponsor in the Sponsors table.
+
+To exit this window, click the 'X' in the upper right corner of the window.
+

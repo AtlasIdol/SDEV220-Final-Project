@@ -1,5 +1,7 @@
-""" login_module_V3.py
+"""
+login_module_V3.py
 Author: Timothy Gist
+Database Support: Maranda Dodgson
 12/1/2023: This is a module that provides a login function inside a TKinter GUI.
 12/3/2023: The original version of this module did not clear the login form from the screen
 and did not return control to the calling program.  I fixed that by adding the
@@ -9,10 +11,11 @@ and did not return control to the calling program.  I fixed that by adding the
 The problem was a wrong function call on button click.
 """
 
+
 def login():
     import tkinter as tk
     import tkinter.messagebox as tkMessageBox
-    from tkinter import StringVar
+    from tkinter import StringVar, ttk
     import sqlite3
 
     my_font = ("Lucida Console", 14)
@@ -28,6 +31,9 @@ def login():
     y = (screen_height / 2) - (height / 2)
     root.geometry("%dx%d+%d+%d" % (width, height, x, y))
     root.resizable(0, 0)
+
+    def disable_event():
+        pass
 
     def database():
         global conn, cursor
@@ -55,6 +61,7 @@ def login():
         ent_password.grid(row=2, column=1)
         btn_login = tk.Button(LoginFrame, text="Login", font=my_font, width=35, command=login_now)
         btn_login.grid(row=4, columnspan=2, pady=20)
+        root.protocol('WM_DELETE_WINDOW', disable_event)
         # lbl_register = tk.Label(LoginFrame, text="Register", fg="Blue", font=my_font)
         # lbl_register.grid(row=0, sticky=tk.W)
         # lbl_register.bind('<Button-1>', toggletoregister)
@@ -140,6 +147,7 @@ def login():
     root.config(menu=menubar)
 
     root.mainloop()
+
 
 if __name__ == '__main__':
     login()
