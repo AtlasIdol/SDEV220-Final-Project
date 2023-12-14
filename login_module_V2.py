@@ -1,8 +1,10 @@
-"""login_module_V2.py
+"""
+login_module_V2.py
 12/1/2023: This is a module that provides a login function inside a TKinter GUI.
 12/3/2023: The original version of this module did not clear the login form from the screen
 and did not return control to the calling program.  I fixed that by adding the
 .destroy() method and inserting the return keyword in the successful login blocks.
+This is an older version of the module and will not be used in the final version.
 """
 
 
