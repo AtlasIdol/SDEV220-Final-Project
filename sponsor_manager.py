@@ -17,7 +17,7 @@ import tkinter.messagebox as tkmessagebox
 from login_module_V3 import *
 import sqlite3
 from tkinter import ttk
-import new_sponsor
+from new_sponsor import *
 
 login()
 
@@ -228,8 +228,8 @@ def membership_renewal():
     conn.close()
 
 
-def new_sponsor():
-    new_sponsor.new_sponsor()
+def add_sponsor():
+    new_sponsor()
 
 
 # Create the text box for query output
@@ -246,7 +246,7 @@ btn6 = tk.Button(frm_buttons, text='Payment Not received', command=payment_not_r
 btn7 = tk.Button(frm_buttons, text='Sponsor Level', command=sponsor_level, state='disabled')
 btn8 = tk.Button(frm_buttons, text='Membership Cost', command=membership_cost, state='disabled')
 btn9 = tk.Button(frm_buttons, text='Membership Renewal', command=membership_renewal, state='disabled')
-btn10 = tk.Button(frm_buttons, text='Add New Sponsor', command=new_sponsor)
+btn10 = tk.Button(frm_buttons, text='Add New Sponsor', command=add_sponsor)
 # Place everything in the main window
 btn1.grid(row=1, column=0, padx=5, pady=5)
 btn2.grid(row=2, column=0, padx=5, pady=5)
