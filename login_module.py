@@ -1,5 +1,8 @@
-# login_module.py
-'''This is a module that provides a login function inside a TKinter GUI.'''
+'''
+login_module.py
+This is a module that provides a login function inside a TKinter GUI.
+This is an older version and will no longer be used.
+'''
 
 
 def login():
