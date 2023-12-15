@@ -10,6 +10,7 @@ information about the specific functions available.
 There is also functionality that allows the user to add new sponsors and then return to the main program.
 This is not intended to be the final version at this time, but rather a working prototype that can
 allow for greater functionality in the future.
+12/14/2023: Added formatting to the output for cleaner, more readable text.
 """
 
 import tkinter as tk
