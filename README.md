@@ -7,7 +7,7 @@ a list of sponsors by name and sponsorship level, a list of sponsors based on pa
 These reports will be set up as 'pre-built' searches for easy reference.
 Necessary files for this project:
   about.txt
-  db_mamber.db
+  db_member.db
   login_module_V3.py
   new_sponsor.py
   sponsor_manager.py
