@@ -19,7 +19,7 @@ import sqlite3
 from tkinter import ttk
 from new_sponsor import *
 
-# login()
+login()
 
 
 # Create base window
