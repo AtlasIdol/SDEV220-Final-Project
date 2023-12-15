@@ -19,7 +19,7 @@ import sqlite3
 from tkinter import ttk
 from new_sponsor import *
 
-login()
+# login()
 
 
 # Create base window
@@ -30,7 +30,7 @@ root.geometry('700x700')
 
 def group_members():
     result = tkmessagebox.showinfo('Team Members',
-                                   'Team Leader: Timothy Gist \nData Support: Maranda Dodgson', icon="info")
+                                   'Team Leader: Timothy Gist \nDatabase Support: Maranda Dodgson', icon="info")
 
 
 def about():
@@ -83,6 +83,7 @@ def sponsors():
     for record in records:
         for item in record:
             print_records += str(item) + '\n'
+        txt_edit.insert('end', '----------\n')
         txt_edit.insert('end', f'{print_records} \n')
         print_records = ''
 
@@ -97,9 +98,13 @@ def membership():
     cur.execute('SELECT * FROM Membership_level')
     records = cur.fetchall()
     print_records = ''
+    item_label = ['ID', 'Level', 'Renewal', 'Cost']
     for record in records:
+        count = 0
         for item in record:
-            print_records += str(item) + '\n'
+            print_records += f'{item_label[count]: >10}:  {str(item): <10} \n'
+            count += 1
+
         txt_edit.insert('end', f'{print_records} \n')
         print_records = ''
 
@@ -132,7 +137,7 @@ def sponsor_names():
     records = cur.fetchall()
     print_records = ''
     for record in records:
-        print_records += f'Sponsor Name: {str(record)} \n'
+        print_records += f'Sponsor Name: {str(record[0])} \n'
         txt_edit.insert('end', f'{print_records} \n')
         print_records = ''
 
@@ -144,7 +149,7 @@ def payment_received():
     txt_edit.delete(1.0, tk.END)
     conn = sqlite3.connect('db_member.db')
     cur = conn.cursor()
-    cur.execute('SELECT * FROM sponsors WHERE Payment_Received = "Yes"')
+    cur.execute('SELECT Sponsor_Name FROM sponsors WHERE Payment_Received = "Yes"')
     records = cur.fetchall()
     print_records = ''
     for record in records:
@@ -161,7 +166,7 @@ def payment_not_received():
     txt_edit.delete(1.0, tk.END)
     conn = sqlite3.connect('db_member.db')
     cur = conn.cursor()
-    cur.execute('SELECT * FROM sponsors WHERE Payment_Received = "No"')
+    cur.execute('SELECT Sponsor_Name FROM sponsors WHERE Payment_Received = "No"')
     records = cur.fetchall()
     print_records = ''
     for record in records:
